@@ -1,0 +1,11 @@
+/* 变量 */
+$green: #80bd01;
+
+/* mixin */
+@mixin textOverflow {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+

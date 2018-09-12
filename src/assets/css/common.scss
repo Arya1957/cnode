@@ -1,0 +1,93 @@
+/* loading */
+.loading  {
+  text-align: center;
+  padding-top: 200px;
+}
+
+/* 头像 */
+// 中号头像
+.user-avatar {
+  width: 30px;
+  height: 30px;
+  vertical-align: top; // 去除缝隙
+  border-radius: 2px;
+}
+// 大号头像
+.user-avatar-large {
+  width: 40px;
+  height: 40px;
+  vertical-align: top; // 去除缝隙
+  border-radius: 3px;
+}
+
+/* 帖子分类 */ 
+  // 由于帖子详情中也用到了这个，所以单独列出来了
+  .topic-type {
+    font-size: 12px;
+    padding: 3px 4px;
+    color: #999;
+    background: #e5e5e5;
+    border-radius: 3px;
+    margin-right: 10px;
+  }
+  // 精华、置顶
+  .topic-type.highlight {
+    background: $green;
+    color: #fff;
+  }
+
+/* 帖子列表项 */
+.posts .post {
+  padding: 10px 16px;
+  border-top: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &:first-child {
+    border-top: none;
+  }
+  &:hover {
+    background: #f6f6f6;
+  }
+  //  回复量 & 浏览量
+  .counts { 
+    margin: 0 12px;
+    .reply-count {
+      color: #9e78c0;
+    }
+    .count-seperator {
+      font-size: 10px;
+      margin: -2px;
+    }
+    .visit-count {
+      color: #b4b4b4;
+      font-size: 12px;
+    }
+  }
+  .title {
+    @include textOverflow;
+    color: #333;
+    font-size: 16px;
+    flex: 1;
+    min-width: 50%;
+    &:visited {
+      color: #888;
+    }
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  .update-time {
+    padding-left: 8px;
+    font-size: 12px;
+    color: #778087;
+  }
+}
+ @media (max-width: 768px) {
+    #sidebar {
+      display: none;
+    }
+    #app>.layout {
+      width: 100%;
+    }
+ }
