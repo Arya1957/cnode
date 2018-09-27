@@ -13,9 +13,19 @@
         <img src="http://pf39hp3g2.bkt.clouddn.com/cnode3.jpg" width="25%">	
 </div>
 
-#### 总结
+### 总结
+##### 在Vue中使用 SCSS 变量
+当我在assets下新建了一个 variables.scss文件存放我们的scss变量时，发现无法在组件中直接使用，最后找到解决方法如下：
+- 安装 sass-resources-loader
+```
+npm install sass-resources-loader --save-dev
+```
+- 修改 utils.js 文件
 
-#### 使用 Vue 的 filters给帖子分类
+具体操作总结到[博客](https://www.jianshu.com/p/437aa3eaadd6)里了
+
+
+#####  使用 Vue 的 filters给帖子分类
 filter 串联 满足多场景需要，有的地方需要将帖子分为置顶、精华、问答、分享、招聘（帖子列表页），而有的地方只需要知道帖子来自哪个版块，比如问答、分享、招聘等（帖子详情页两种场景都有），所以就写了两个过滤器，根据需要使用。
 -  过滤器如下：
 ```
@@ -51,7 +61,7 @@ Vue.filter('topicFormat', function (val,obj) { // 过滤器2  ，判断帖子是
  {{ post.tab | topicType | topicFormat(post)  }}
 ```
 
-#### 通过自定义事件实现父子组件通信
+#####  通过自定义事件实现父子组件通信
 在pagination组件中 emit 事件 :
 `this.$emit('handle', this.curPage)`
 在postlist组件中监听事件，获取页码，然后根据页码获取帖子数据
@@ -65,7 +75,7 @@ Vue.filter('topicFormat', function (val,obj) { // 过滤器2  ，判断帖子是
 [非父子组件通信](https://www.jianshu.com/p/f33c884d2ab5)
 
 
-####  Vue Router 的使用
+#####   Vue Router 的使用
 - 路由跳转
 ```
 <router-link to="/"></router-link>
@@ -123,6 +133,7 @@ router.js
       }
     }]
 ```
+
 
 
 ## Build Setup
