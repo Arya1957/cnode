@@ -16,7 +16,14 @@ export default new Router({
         main: PostList
       }
     },
-
+    // {
+    //   path: '/?tab=:tab',
+    //   name: 'categroy',
+    //   components: {
+    //     main: PostList
+    //   }
+    // }
+    // ,
     {
       path: '/topic/:id&author=:name',  //指定要跳转的路径，在path后加/: +传递的参数 ， = 号后面不要有空格！！
       name: 'article',

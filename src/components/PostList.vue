@@ -6,6 +6,17 @@
     </div>
     <div v-else>
    <!-- 帖子分类 -->
+   <!-- <ul id="tabs">
+     <li v-for="(item,index) in topics" :key="index"
+         v-on:click="selected = index"
+     v-bind:class= "['topic-tab', {active: selected === index }]" 
+          >
+           <router-link :to = "{name: 'home', params: {tab: item.tab}}">
+          {{ item.title }}
+           </router-link>
+       </li>   
+    </ul>  -->
+
     <ul id="tabs">
       <li v-bind:class= "['topic-tab', {active: selected === index }]" 
          v-for="(item,index) in topics" :key="index"
@@ -100,13 +111,20 @@ export default {
     },
     fetchData(idx) {
       this.page = idx;
-      this.getData()
+      this.getData();
     }
   },
   beforeMount: function() {
     this.loading = true;
     this.getData();
-  }
+  }//,
+  // watch: {
+  //   $route(to, from) {
+  //     let tab = this.$route.params.tab;
+  //     this.url = `https://cnodejs.org/api/v1/topics?tab=${tab}`; // 改变链接
+  //     this.getData(this.url);
+  //   }
+  // }
 };
 </script>
 <style lang="scss" scoped>
