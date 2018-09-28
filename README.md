@@ -1,7 +1,8 @@
 # cnode
 
 ### Vue.js 实现CNODE社区
-基于  Vue.js 实现的一个 CNODE 社区，目前实现了帖子列表页、帖子详情、用户信息页。
+基于  Vue.js 实现的一个 CNODE 社区，目前实现了帖子列表页、帖子详情、用户信息页。<br>
+
 **主要技术栈：**  ES6 + Webpack + Scss + vue-cli + Vue Router + axios + media queries 
 
 
